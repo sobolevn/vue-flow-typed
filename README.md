@@ -7,10 +7,10 @@
 
 ## Reasoning
 
-Using `flow` is awesome. However, using `flow` with `Vue` is not that good.
+`flow` is awesome. However, using `flow` with `Vue` is not that good.
 Since `Vue` does not provide any type definitions.
 
-It also applies for other related packages, like: `vuex`, `vue-class-component`, and others.
+It also applies for other related packages, like: `vuex`, `vue-router`, and others.
 
 We want to provide good typing.
 
@@ -19,8 +19,10 @@ We want to provide good typing.
 
 - `vuex` - fully supported
 - `vue` - work in progress (currently full support is not reachable)
+- `vue-router` - planning
 - `vue-class-component` - planning
 - `vuex-class` - planning
+- `nuxt` - planning
 - `nuxt-class-component` - planning
 - `nuxt-axios` - planning
 
@@ -40,13 +42,15 @@ Then add this line to your `.flowconfig`:
 
 Done!
 
+Check out [this project template](https://github.com/wemake-services/wemake-vue-template) if you don't know how to start.
+
 
 ## Known problems
 
 There are some problems we can not fix for now:
 
 1. `flow` does not allow to [extend existing library](https://github.com/facebook/flow/issues/452) definitions. So we can not extend `Vue` instances to have `$store` when `vuex` is installed
-2. `flow` does not allow to [annotate `this`](https://github.com/facebook/flow/issues/396). So, we can not specify some types for some `Vue` internal, like `$nextTick` and others
+2. `flow` does not allow to [annotate `this`](https://github.com/facebook/flow/issues/396). So, we can not specify some types for some `Vue` internals, like `$nextTick` and others
 
 
 ## Contributing
