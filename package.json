@@ -1,0 +1,22 @@
+{
+  "name": "vue-flow-typed",
+  "version": "0.1.0",
+  "description": "Complimentary flow types for Vue",
+  "repository": "https://github.com/sobolevn/vue-flow-typed.git",
+  "author": "sobolevn <mail@sobolevn.me>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "lint": "eslint --ext .js --ignore-path .gitignore ."
+  },
+  "dependencies": {
+    "flow-bin": "^0.71.0",
+    "flow-typed": "^2.4.0",
+    "flowgen": "^1.2.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1",
+    "eslint-plugin-flowtype": "^2.46.3"
+  }
+}
