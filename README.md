@@ -49,8 +49,8 @@ Check out [this project template](https://github.com/wemake-services/wemake-vue-
 
 There are some problems we can not fix for now:
 
-1. `flow` does not allow to [extend existing library](https://github.com/facebook/flow/issues/452) definitions. So we can not extend `Vue` instances to have `$store` when `vuex` is installed
-2. `flow` does not allow to [annotate `this`](https://github.com/facebook/flow/issues/396). So, we can not specify some types for some `Vue` internals, like `$nextTick` and others
+1. `flow` does not allow to [extend existing library](https://github.com/facebook/flow/issues/396) definitions. So we can not extend `Vue` instances to have `$store` when `vuex` is installed
+2. `flow` does not allow to [annotate `this`](https://github.com/facebook/flow/issues/452). So, we can not specify some types for some `Vue` internals, like `$nextTick` and others
 
 
 ## Contributing
