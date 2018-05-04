@@ -15,32 +15,15 @@ It also applies for other related packages, like: `vuex`, `vue-router`, and othe
 We want to provide good typing.
 
 
-## Supported libraries
+## Packages
 
-- `vuex` - fully supported
-- `vue` - work in progress (currently full support is not reachable)
-- `vue-router` - planning
-- `vue-class-component` - planning
-- `vuex-class` - planning
-- `nuxt` - planning
-- `nuxt-class-component` - planning
-- `nuxt-axios` - planning
+- [`vuex`](https://github.com/sobolevn/vue-flow-typed/tree/master/packages/vuex) - full support
 
 
 ## Installation
 
-```bash
-npm install --save-dev vue-flow-typed
-```
-
-Then add this line to your `.flowconfig`:
-
-```ini
-[libs]
-./node_modules/vue-flow-typed/definitions
-```
-
-Done!
+You need to install every package independently.
+See the docs of the package you need to install.
 
 Check out [this project template](https://github.com/wemake-services/wemake-vue-template) if you don't know how to start.
 
