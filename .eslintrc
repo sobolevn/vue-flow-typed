@@ -1,0 +1,12 @@
+{
+  "root": true,
+  "extends": [
+    "standard",
+    "flowtype-essential"
+  ],
+  "plugins": [
+    "flowtype-errors"
+  ],
+
+  "parser": "babel-eslint"
+}
