@@ -45,7 +45,7 @@ declare module 'vuex' {
       }
     ): void;
   }
-  declare export function install(Vue: Object): void;
+  declare export function install(Vue: any): void;
 
   declare export interface Dispatch {
     (type: string, payload?: any, options?: DispatchOptions): Promise<any>;
@@ -55,7 +55,7 @@ declare module 'vuex' {
     (type: string, payload?: any, options?: CommitOptions): void;
     (payloadWithType: Payload, options?: CommitOptions): void;
   }
-  declare export interface ActionContext<S, R>{
+  declare export interface ActionContext<S, R = S>{
     dispatch: Dispatch,
     commit: Commit,
     state: S,
@@ -93,30 +93,30 @@ declare module 'vuex' {
     strict?: boolean
   }
 
-  declare export type ActionHandler<S, R> = (
+  declare export type ActionHandler<S, R = S> = (
     injectee: ActionContext<S, R>,
     payload: any
   ) => any;
 
-  declare export interface ActionObject<S, R> {
+  declare export interface ActionObject<S, R = S> {
     root?: boolean,
     handler: ActionHandler<S, R>
   }
 
-  declare export type Getter<S, R> = (
+  declare export type Getter<S, R = S> = (
     state: S,
     getters: any,
     rootState: R,
     rootGetters: any
   ) => any;
 
-  declare export type Action<S, R> = ActionHandler<S, R> | ActionObject<S, R>;
+  declare export type Action<S, R = S> = ActionHandler<S, R> | ActionObject<S, R>;
 
   declare export type Mutation<S> = (state: S, payload: any) => any;
 
   declare export type Plugin<S> = (store: Store<S>) => any;
 
-  declare export interface Module<S, R> {
+  declare export interface Module<S, R = S> {
     namespaced?: boolean,
     state?: S | (() => S),
     getters?: GetterTree<S, R>,
@@ -128,10 +128,10 @@ declare module 'vuex' {
   declare export interface ModuleOptions {
     preserveState?: boolean
   }
-  declare export interface GetterTree<S, R> {
+  declare export interface GetterTree<S, R = S> {
     [key: string]: Getter<S, R>;
   }
-  declare export interface ActionTree<S, R> {
+  declare export interface ActionTree<S, R = S> {
     [key: string]: Action<S, R>;
   }
   declare export interface MutationTree<S> {
