@@ -13,7 +13,7 @@
 ## Installation
 
 You need to install every package independently.
-See the docs of the package you need to install.
+They are all published under [`@vue-flow-typed` organization](https://www.npmjs.com/org/vue-flow-typed).
 
 Check out [this project template](https://github.com/wemake-services/wemake-vue-template) if you don't know how to start.
 
@@ -24,6 +24,7 @@ There are some problems we can not fix for now:
 
 1. `flow` does not allow to [extend existing library](https://github.com/facebook/flow/issues/396) definitions. So we can not extend `Vue` instances to have `$store` when `vuex` is installed
 2. `flow` does not allow to [annotate `this`](https://github.com/facebook/flow/issues/452). So, we can not specify some types for some `Vue` internals, like `$nextTick` and others
+3. This typing are not yet good enough to be submitted to [`flow-typed`](https://github.com/flowtype/flow-typed). However, we will do it one day
 
 See [issues](https://github.com/sobolevn/vue-flow-typed/issues) 
 for other know problems.
