@@ -8,6 +8,7 @@
 ## Packages
 
 - [`vuex`](https://vuex.vuejs.org/en/) - full support via [`@vue-flow-typed/vuex`](https://github.com/sobolevn/vue-flow-typed/tree/master/packages/vuex)
+- [`vue-router`](https://router.vuejs.org/) - full support via [`@vue-flow-typed/vue-router`](https://github.com/sobolevn/vue-flow-typed/tree/master/packages/vue-router)
 
 
 ## Installation
@@ -27,7 +28,7 @@ There are some problems we can not fix for now:
 3. This typing are not yet good enough to be submitted to [`flow-typed`](https://github.com/flowtype/flow-typed). However, we will do it one day
 
 See [issues](https://github.com/sobolevn/vue-flow-typed/issues) 
-for other know problems.
+for other known problems.
 
 
 ## Contributing

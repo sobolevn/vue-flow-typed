@@ -9,6 +9,8 @@
  */
 
 declare module 'vuex' {
+  declare type Vue = any // type alias because we can not use real `Vue`
+
   declare export class Store<S> {
     constructor(options: StoreOptions<S>): Store<S>;
 
@@ -115,7 +117,8 @@ declare module 'vuex' {
     rootGetters: any
   ) => any
 
-  declare export type Action<S, R = S> = ActionHandler<S, R> | ActionObject<S, R>
+  declare export type Action<S, R = S> =
+    ActionHandler<S, R> | ActionObject<S, R>
 
   declare export type Mutation<S> = (state: S, payload: any) => any
 
@@ -146,7 +149,7 @@ declare module 'vuex' {
     [key: string]: Module<any, R>
   }
 
-  declare export function install (Vue: any): void;
+  declare export function install (vm: Vue): void;
 
   declare export default {
     install: install,
