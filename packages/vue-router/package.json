@@ -1,6 +1,6 @@
 {
   "name": "@vue-flow-typed/vue-router",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Flow types for Vue Router",
   "repository": "https://github.com/sobolevn/vue-flow-typed.git",
   "author": "sobolevn <mail@sobolevn.me>",

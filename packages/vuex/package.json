@@ -1,6 +1,6 @@
 {
   "name": "@vue-flow-typed/vuex",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Flow types for Vuex",
   "repository": "https://github.com/sobolevn/vue-flow-typed.git",
   "author": "sobolevn <mail@sobolevn.me>",
