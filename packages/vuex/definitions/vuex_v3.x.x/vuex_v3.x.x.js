@@ -10,34 +10,34 @@
 
 declare module 'vuex' {
   declare export class Store <S> {
-    constructor(options: StoreOptions<S>): Store<S>;
+    constructor(options: StoreOptions<S>): Store<S>,
 
-    state: S;
-    getters: any;
-    dispatch: Dispatch;
-    commit: Commit;
+    state: S,
+    getters: any,
+    dispatch: Dispatch,
+    commit: Commit,
 
-    replaceState(state: S): void;
+    replaceState(state: S): void,
 
-    subscribe<P>(fn: (mutation: P, state: S) => any): () => void;
-    subscribeAction<P>(fn: (action: P, state: S) => any): () => void;
+    subscribe<P>(fn: (mutation: P, state: S) => any): () => void,
+    subscribeAction<P>(fn: (action: P, state: S) => any): () => void,
     watch<T>(
       getter: (state: S, getters: any) => T,
       cb: (value: T, oldValue: T) => void,
       options?: any
-    ): () => void;
+    ): () => void,
     registerModule<T>(
       path: string,
       module: Module<T, S>,
       options?: ModuleOptions
-    ): void;
+    ): void,
     registerModule<T>(
-      path: string[],
+      path: Array<string>,
       module: Module<T, S>,
       options?: ModuleOptions
-    ): void;
-    unregisterModule(path: string): void;
-    unregisterModule(path: string[]): void;
+    ): void,
+    unregisterModule(path: string): void,
+    unregisterModule(path: Array<string>): void,
     hotUpdate(
       options: {
         actions?: ActionTree<S, S>,
@@ -47,15 +47,15 @@ declare module 'vuex' {
       }
     ): void
   }
-  declare export function install(Vue: any): void;
+  declare export function install(Vue: any): void
 
   declare export interface Dispatch {
-    (type: string, payload?: any, options?: DispatchOptions): Promise<any>;
-    (payloadWithType: Payload, options?: DispatchOptions): Promise<any>;
+    (type: string, payload?: any, options?: DispatchOptions): Promise<any>,
+    (payloadWithType: Payload, options?: DispatchOptions): Promise<any>
   }
   declare export interface Commit {
-    (type: string, payload?: any, options?: CommitOptions): void;
-    (payloadWithType: Payload, options?: CommitOptions): void;
+    (type: string, payload?: any, options?: CommitOptions): void,
+    (payloadWithType: Payload, options?: CommitOptions): void
   }
   declare export interface ActionContext<S, R = S>{
     dispatch: Dispatch,
@@ -91,7 +91,7 @@ declare module 'vuex' {
     actions?: ActionTree<S, S>,
     mutations?: MutationTree<S>,
     modules?: ModuleTree<S>,
-    plugins?: Plugin<S>[],
+    plugins?: Array<Plugin<S>>,
     strict?: boolean
   }
 
@@ -120,7 +120,7 @@ declare module 'vuex' {
 
   declare export interface Module<S, R = S> {
     namespaced?: boolean,
-    state?: S | (() => S),
+    +state?: S | (() => S),
     getters?: GetterTree<S, R>,
     actions?: ActionTree<S, R>,
     mutations?: MutationTree<S>,
