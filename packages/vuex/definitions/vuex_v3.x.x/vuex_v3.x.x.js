@@ -149,4 +149,10 @@ declare module 'vuex' {
     install: install,
     Store: typeof Store
   }
+
+  declare export function mapState (namespace?: string, map: Array<string> | Object): Object
+  declare export function mapGetters (namespace?: string, map: Array<string> | Object): Object
+  declare export function mapActions (namespace?: string, map: Array<string> | Object): Object
+  declare export function mapMutations (namespace?: string, map: Array<string> | Object): Object
+  declare export function createNamespacedHelpers (namespace: string): Object
 }
