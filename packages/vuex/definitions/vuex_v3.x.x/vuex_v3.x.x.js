@@ -47,7 +47,7 @@ declare module 'vuex' {
       }
     ): void
   }
-  declare export type install = (Vue: any) => void
+  declare export function install(Vue: any): void
 
   declare export interface Dispatch {
     (type: string, payload?: any, options?: DispatchOptions): Promise<any>,
@@ -144,13 +144,13 @@ declare module 'vuex' {
   }
 
   declare export default {
-    install: install,
+    install: typeof install,
     Store: typeof Store
   }
 
-  declare export type mapState = (namespace?: string, map: Array<string> | Object) => Object
-  declare export type mapGetters = (namespace?: string, map: Array<string> | Object) => Object
-  declare export type mapActions = (namespace?: string, map: Array<string> | Object) => Object
-  declare export type mapMutations = (namespace?: string, map: Array<string> | Object) => Object
-  declare export type createNamespacedHelpers = (namespace: string) => Object
+  declare export function mapState (namespace?: string, map: Array<string> | Object): Object
+  declare export function mapGetters (namespace?: string, map: Array<string> | Object): Object
+  declare export function mapActions (namespace?: string, map: Array<string> | Object): Object
+  declare export function mapMutations (namespace?: string, map: Array<string> | Object): Object
+  declare export function createNamespacedHelpers (namespace: string): Object
 }
