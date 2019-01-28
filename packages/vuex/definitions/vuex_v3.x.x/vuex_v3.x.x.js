@@ -158,7 +158,6 @@ declare module 'vuex' {
   declare type MutationMapping = Mapping<string | (commit: Commit, ...args: Array<any>) => any>;
   declare type ActionMapping = Mapping<string | (dispath: Dispatch, ...args: Array<any>) => any>;
 
-
   declare export function mapState(map: StateMapping): Object
   declare export function mapState(namespace: string, map: StateMapping): Object
 
