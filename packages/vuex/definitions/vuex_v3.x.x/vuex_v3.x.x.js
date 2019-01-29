@@ -47,7 +47,7 @@ declare module 'vuex' {
       }
     ): void
   }
-  declare export type install = (Vue: any) => void
+  declare export function install(Vue: any): void
 
   declare export interface Dispatch {
     (type: string, payload?: any, options?: DispatchOptions): Promise<any>,
@@ -144,13 +144,31 @@ declare module 'vuex' {
   }
 
   declare export default {
-    install: install,
+    install: typeof install,
     Store: typeof Store
   }
 
-  declare export type mapState = (namespace?: string, map: Array<string> | Object) => Object
-  declare export type mapGetters = (namespace?: string, map: Array<string> | Object) => Object
-  declare export type mapActions = (namespace?: string, map: Array<string> | Object) => Object
-  declare export type mapMutations = (namespace?: string, map: Array<string> | Object) => Object
-  declare export type createNamespacedHelpers = (namespace: string) => Object
+  // helpers
+
+  declare type Dictionary<T> = { [key: string]: T };
+  declare type Mapping<R> = Array<string> | Dictionary<R>;
+
+  declare type StateMapping = Mapping<string | (state: any, getters: Dictionary<any>) => any>;
+  declare type GetterMapping = Mapping<string>;
+  declare type MutationMapping = Mapping<string | (commit: Commit, ...args: Array<any>) => any>;
+  declare type ActionMapping = Mapping<string | (dispath: Dispatch, ...args: Array<any>) => any>;
+
+  declare export function mapState(map: StateMapping): Object
+  declare export function mapState(namespace: string, map: StateMapping): Object
+
+  declare export function mapGetters(map: GetterMapping): Object
+  declare export function mapGetters(namespace: string, map: GetterMapping): Object
+
+  declare export function mapMutations(map: MutationMapping): Object
+  declare export function mapMutations(namespace: string, map: MutationMapping): Object
+
+  declare export function mapActions(map: ActionMapping): Object
+  declare export function mapActions(namespace: string, map: ActionMapping): Object
+
+  declare export function createNamespacedHelpers(namespace: string): Object
 }
